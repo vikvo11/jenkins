@@ -1,3 +1,4 @@
+//Declarative Pipeline
 pipeline {
     agent any
     stages{
@@ -42,7 +43,7 @@ echo "Build full flag: ${BUILD_FULL}"
     }
     }
 }}
-
+//Scripted Pipeline
 node { 
     def who 
     stage('Preparation') { 
