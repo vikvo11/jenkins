@@ -7,3 +7,20 @@ curl -X POST http://admin:apiToken@35.177.232.11:8080/job/Send_msg/build --data-
 sudo ufw allow 8080
 sudo ufw enable
 sudo ufw status
+
+**(Declarative Pipeline)**
+pipeline {
+environments{foo="foo"}
+}
+echo "foo - ${env.foo}"
+
+**(Scripted Pipeline)**
+node{
+def home
+ stage ('test'){
+ withEnv(["java_home=$home"])
+   {sh 'echo $java_home'
+   }
+   
+ }
+}
